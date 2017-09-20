@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let url = "http://rezero.wikia.com/wiki/Rem"
+        let slp = SwiftLinkPreview()
+        slp.preview(url, onSuccess: { result in
+            print(result)
+        }) { error in
+            print(error.localizedDescription)
+        }
     }
 
     override func didReceiveMemoryWarning() {
